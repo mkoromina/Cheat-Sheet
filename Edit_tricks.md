@@ -1,17 +1,18 @@
 
-## Check also Sarah's repository for an overlap https://github.com/sarahcolbert/oneish_liners 
+## Check also Sarah's repository for an overlap 
+https://github.com/sarahcolbert/oneish_liners 
 
 ## Get the maximum and minimum value of the 3rd column from a .gz file 
 
 ```
 gzcat daner_BIP_PGC3_HLA_1KG_dosages_run_repeat.gz | awk 'NR == 1 || $3 < min {line = $0; min = $3}END{print line}'
 ```
-##returns the minimum value of the 3rd column
+returns the minimum value of the 3rd column
 
 ```
 gzcat daner_BIP_PGC3_HLA_1KG_dosages_run_repeat.gz | awk -v max=0 'FNR > 1 {if($3>max){want=$0; max=$3}}END{print want}'
 ```
-##returns the maximum value of the 3rd column
+returns the maximum value of the 3rd column
 
 
 ## Edit GWAS summary stats (here in .tsv format) by renaming certain column(s)
