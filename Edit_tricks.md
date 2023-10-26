@@ -58,4 +58,26 @@ awk 'NR == 1 {line = $0; min = $13}
      done
 ```
 
+## Print your count of jobs in minerva
+Number of jobs you are running (private, premium, etc)
+
+```
+bjobs -u all | grep private | awk '{print $2}' | sort | uniq -c
+bjobs -u all | grep private | grep RUN | awk '{print $2}' | sort | uniq -c
+bjobs | grep PEND | awk '{print $1}'
+```
+
+## Change the Minerva job submission parameters for a list of jobs
+
+```
+for jobID in `bjobs -u koromm03 | grep PEND | awk '{print $1}'`
+do bmod -W .. -n ... -R ... $jobID
+done
+```
+Example bmod -R rusage[mem=80GB] -R himem  jobnumber
+
+
+
+
+
 
