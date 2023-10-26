@@ -1,7 +1,4 @@
 
-## Check also Sarah's repository for an overlap 
-https://github.com/sarahcolbert/oneish_liners 
-
 ## Get the maximum and minimum value of the 3rd column from a .gz file 
 
 ```
