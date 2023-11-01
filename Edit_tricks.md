@@ -34,7 +34,7 @@ done
 echo -e "PROBE\tSNP\tBP\tP\tBETA" | cat -  file.txt  >  file.headers.txt 
 ```
 
-## Split a column based on a string character in unix
+## Split a column based on a string character in Unix
 
 ```
 awk '{sub (/;/, OFS)} 1' OFS="\t"  file.headers.txt >  file.headers2.txt
@@ -58,7 +58,7 @@ awk 'NR == 1 {line = $0; min = $13}
      done
 ```
 
-## Print your count of jobs in minerva
+## Print your count of jobs in Minerva
 Number of jobs you are running (private, premium, etc)
 
 ```
