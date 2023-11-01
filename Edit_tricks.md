@@ -79,7 +79,7 @@ Example ```bmod -R rusage[mem=80GB] -R himem  jobnumber```
 ## File permissions
 ### Individual permissions
 ```
-chmod 777 #simple read, write, exectute
+chmod 777 #simple read, write, execute
 setfacl -m u:usr:rwx,m::rwx /path/to/file
 
 setfacl -Rm u:usr:rwx,m::rwx /dir
