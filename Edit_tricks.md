@@ -74,8 +74,25 @@ for jobID in `bjobs -u koromm03 | grep PEND | awk '{print $1}'`
 do bmod -W .. -n ... -R ... $jobID
 done
 ```
-Example bmod -R rusage[mem=80GB] -R himem  jobnumber
+Example ```bmod -R rusage[mem=80GB] -R himem  jobnumber```
 
+## File permissions
+### Individual permissions
+```
+chmod 777 #simple read, write, exectute
+setfacl -m u:usr:rwx,m::rwx /path/to/file
+
+setfacl -Rm u:usr:rwx,m::rwx /dir
+setfacl -Rdm u:usr:rwx,m::rwx /dir
+
+setfacl -m u:usr:rwx,u:usr2:rwx,m::rwx
+```
+
+### Group permissions 
+```
+setfacl -Rm g:groupname:rwx,m::rwx /dir
+setfacl -Rdm g:groupname:rwx,m::rwx /dir
+```
 
 
 
