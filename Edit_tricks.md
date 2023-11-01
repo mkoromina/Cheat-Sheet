@@ -12,7 +12,7 @@ gzcat file.gz | awk -v max=0 'FNR > 1 {if($3>max){want=$0; max=$3}}END{print wan
 returns the maximum value of the 3rd column
 
 
-## Edit GWAS summary stats (here in .tsv format) by renaming certain column(s)
+## Edit GWAS summary stats (.tsv format) by renaming certain column(s)
 
 ```
  sed -i -e 's/NCON/N_controls/' munged_sumstats.tsv
@@ -28,7 +28,7 @@ done
 ```
 
 
-## Add header to any file in unix
+## Add header to any file in Unix
 
 ```
 echo -e "PROBE\tSNP\tBP\tP\tBETA" | cat -  file.txt  >  file.headers.txt 
