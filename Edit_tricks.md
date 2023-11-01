@@ -1,5 +1,5 @@
 
-## Get the maximum and minimum value of the 3rd column from a .gz file 
+## Get the maximum and minimum value of a column (.gz file) 
 
 ```
 gzcat file.gz | awk 'NR == 1 || $3 < min {line = $0; min = $3}END{print line}'
