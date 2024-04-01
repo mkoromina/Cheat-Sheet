@@ -40,6 +40,21 @@ echo -e "PROBE\tSNP\tBP\tP\tBETA" | cat -  file.txt  >  file.headers.txt
 awk '{sub (/;/, OFS)} 1' OFS="\t"  file.headers.txt >  file.headers2.txt
 ```
 
+## Conditional filtering using awk commands:
+### Assuming we have some ICD codes are stored in icd_codes.txt (only one column) and our data file is data.txt
+### We use awk to filter the data file based on exact matches in the third column with icd_codes.txt
+
+```
+awk 'NR==FNR{icd[$0]; next} $3 in icd' icd_codes.txt data.txt
+```
+
+## Conditional filtering using zgrep command:
+### Assuming we have a gzipped file and we wish to filter this based on entries in snpids.txt (only one col)
+
+```
+zgrep -Fwf snpids.txt your_gzipped_file.gz | gzip > filtered_output.gz
+```
+
 ## Merge multiple .txt files and keep the header of the 1st file
 
 ```
