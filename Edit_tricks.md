@@ -40,7 +40,7 @@ echo -e "PROBE\tSNP\tBP\tP\tBETA" | cat -  file.txt  >  file.headers.txt
 awk '{sub (/;/, OFS)} 1' OFS="\t"  file.headers.txt >  file.headers2.txt
 ```
 
-## Conditional filtering using awk commands:
+## Conditional filtering using awk commands
 Let's assume that we have some ICD codes are stored in icd_codes.txt (only one column) and our data file is data.txt.
 We use awk to filter the data file based on exact matches in the third column with icd_codes.txt.
 
@@ -48,7 +48,7 @@ We use awk to filter the data file based on exact matches in the third column wi
 awk 'NR==FNR{icd[$0]; next} $3 in icd' icd_codes.txt data.txt
 ```
 
-## Conditional filtering using zgrep command:
+## Conditional filtering using zgrep command
 Let's assume that we have a gzipped file and we wish to filter this based on entries in snpids.txt (only one col).
 
 ```
@@ -73,7 +73,7 @@ awk 'NR == 1 {line = $0; min = $13}
      done
 ```
 
-## Print your count of jobs in Minerva
+## Print your count of jobs in a LSF job submission system
 Number of jobs you are running (private, premium, etc)
 
 ```
