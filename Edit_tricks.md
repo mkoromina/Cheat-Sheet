@@ -92,24 +92,14 @@ done
 Example ```bmod -R rusage[mem=80GB] -R himem  jobnumber```
 
 ## File permissions
-### Individual permissions
+### Individual & Group permissions
 ```
 chmod 777 #simple read, write, execute
-setfacl -m u:usr:rwx,m::rwx /path/to/file
+chmod -R g+rwx /path/to/directory #modify group permissions
+chmod -R u+rwx /path/to/directory #modify user permissions
 
-setfacl -Rm u:usr:rwx,m::rwx /dir
-setfacl -Rdm u:usr:rwx,m::rwx /dir
+setfacl -dm u:usr:rwx /path/to/directory #assign permissions to a specific user for a given dir
+setfacl -b /path/to/directory #remove group permissions from a dir
 
-setfacl -m u:usr:rwx,u:usr2:rwx,m::rwx
 ```
-
-### Group permissions 
-```
-setfacl -Rm g:groupname:rwx,m::rwx /dir
-setfacl -Rdm g:groupname:rwx,m::rwx /dir
-```
-
-
-
-
 
