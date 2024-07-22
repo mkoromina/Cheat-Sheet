@@ -98,7 +98,7 @@ chmod 777 #simple read, write, execute
 chmod -R g+rwx /path/to/directory #modify group permissions
 chmod -R u+rwx /path/to/directory #modify user permissions
 
-setfacl -dm u:usr:rwx /path/to/directory #assign permissions to a specific user for a given dir
+setfacl -m u:usr:rwx /path/to/directory #assign permissions to a specific user for a given dir
 setfacl -b /path/to/directory #remove group permissions from a dir
 
 ```
