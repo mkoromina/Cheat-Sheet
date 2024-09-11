@@ -73,6 +73,12 @@ awk 'NR == 1 {line = $0; min = $13}
      done
 ```
 
+## Tar zip a folder using bash
+
+```
+tar -czvf test_gwas_sep24.tar.gz /projects/0/pgcd0596/test_gwas_sep24
+```
+
 ## Print your count of jobs in a LSF job submission system
 Number of jobs you are running (private, premium, etc)
 
