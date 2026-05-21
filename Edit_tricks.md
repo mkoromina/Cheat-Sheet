@@ -73,6 +73,12 @@ awk 'NR == 1 {line = $0; min = $13}
      done
 ```
 
+## Check genes from a given list (.txt) are found in a SMR-based .epi file
+
+```
+cut -f5 female_male_combined_pQTL.epi | grep -F -x -f /projects/0/pgcd0596/druggable_genes_pgc4.txt | wc -l
+```
+
 ## Tar zip a folder using bash
 
 ```
